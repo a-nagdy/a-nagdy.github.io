@@ -100,7 +100,7 @@ body {
     .topnav a.icon {
         float: right;
         display: block;
-        color: white;
+        color: #000;
         padding: 10px
     }
 
