@@ -178,7 +178,13 @@ section {
     align-items: center;
     padding: 30px;
     flex-direction: column;
-    height: 80vh;
+    /* height: 80vh; */
+}
+
+.flex-container {
+    margin-right: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 .about-us:nth-of-type(2) .about-us-row {
@@ -544,6 +550,7 @@ footer {
 .mySlides img {
     height: 60vh;
     width: 100%;
+    object-fit: cover;
 }
 
 /* Next & previous buttons */
