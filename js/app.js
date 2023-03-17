@@ -53,25 +53,6 @@ const cardsDetails = [
   },
 ];
 
-// const cardsDetails = {
-//   cardsName: [
-//     "Villa In Hialeah, Dade County",
-//     "Dade County",
-//     "County",
-//     "Villa In Hialeah,",
-//   ],
-//   cardsPrice: [500000, 700000, 800000, 8900000],
-//   cardsDes:
-//     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.",
-//   cardsProductsDetails: [
-//     [3500, 3400, 3600, 3500],
-//     [3, 4, 2, 3],
-//     [1, 2, 3, 4],
-//     [1, 2, 3, 4],
-//   ],
-// };
-// console.log(cardsDetails.cardsProductsDetails);
-
 // uploading cards from the object
 
 let card = document.querySelector(".products");
@@ -152,9 +133,7 @@ for (let i = 0; i < cardsDetails.length; i++) {
   let cardContent = ` 
   <div class="cards d-flex-row" >
     <img src="./img/about-us.jpg" alt="" />
-    <a class="btn-send" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-      <i class="fas fa-shopping-cart"></i>
-    </a>
+    
     <div class="cards-main">
     <h3>${cardsDetails[i].cardName}</h3>
         <span class="price">${cardsDetails[i].cardPrice}</span>
@@ -166,6 +145,12 @@ for (let i = 0; i < cardsDetails.length; i++) {
     <span><strong>${cardsDetails[i].bathrooms}</strong>  Baths </span>
     <span><strong>${cardsDetails[i].rooms}</strong>  Garages </span>
     </p>
+
+    <button class="btn-send" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+      <i class="fas fa-shopping-cart"></i>
+      Contact Us
+    </button>
+
     </div>
     ${subcontent}
  `;
