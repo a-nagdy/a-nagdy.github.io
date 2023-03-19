@@ -156,7 +156,7 @@ body {
 }
 
 .text .call-us-btn:hover {
-    animation: colorChange .5s both ease-in-out;
+    animation: colorChange 500ms both ease-in-out;
 
 }
 
