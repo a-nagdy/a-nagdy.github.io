@@ -62,7 +62,7 @@ for (let i = 0; i < cardsDetails.length; i++) {
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+        <h5 class="modal-title" id="exampleModalToggleLabel"Contact Us</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -116,14 +116,14 @@ for (let i = 0; i < cardsDetails.length; i++) {
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Thank You</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Hide this modal and show the first with the button below.
+        Thank you we will Contact You As Soon As possible.
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
+        <button class="btn btn-success"  data-bs-toggle="modal" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -136,14 +136,16 @@ for (let i = 0; i < cardsDetails.length; i++) {
     
     <div class="cards-main">
     <h3>${cardsDetails[i].cardName}</h3>
-        <span class="price">${cardsDetails[i].cardPrice}</span>
+        <span class="price">${cardsDetails[i].cardPrice.toLocaleString()}</span>
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p>
     </div>
     <p class="details">
-    <span><strong>${cardsDetails[i].cardsProductsDetails}</strong> Sq Ft </span>
+    <span><strong>${cardsDetails[
+      i
+    ].cardsProductsDetails.toLocaleString()}</strong> Sq Ft </span>
     <span><strong>${cardsDetails[i].beds}</strong>  Beds </span>
     <span><strong>${cardsDetails[i].bathrooms}</strong>  Baths </span>
-    <span><strong>${cardsDetails[i].rooms}</strong>  Garages </span>
+    <span><strong>${cardsDetails[i].rooms}</strong>  Rooms </span>
     </p>
 
     <button class="btn-send" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
@@ -155,14 +157,6 @@ for (let i = 0; i < cardsDetails.length; i++) {
     ${subcontent}
  `;
   card.innerHTML += cardContent;
-
-  // function req() {
-  //   if (!required.value === 0) {
-  //     alert("test");
-  //   } else {
-  //     alert(true);
-  //   }
-  // }
 }
 
 let slideIndex = 1;
@@ -206,38 +200,40 @@ let autoplayInterval = setInterval(function () {
   document.getElementById("next").click();
 }, 5000);
 
-// // Stop function added to button
-// function stopAutoplay() {
-//   // Stop the autoplay
-//   clearInterval(autoplayInterval);
-// }
-
 // responsive navbar func
 
 function mobileResp() {
-  let x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  let responsiveBtn = document.getElementById("myTopnav");
+  if (responsiveBtn.className === "topnav") {
+    responsiveBtn.className += " responsive";
   } else {
-    x.className = "topnav";
+    responsiveBtn.className = "topnav";
   }
 }
 // onscroll change navbar color
 window.onscroll = (e) => {
   let navbar = document.querySelector(".navbar");
-  // console.log(scrollY);
-  // console.log(document.body.scrollTop);
-  console.log(document.documentElement.scrollTop);
+  let navList = document.getElementsByClassName("nav-list");
+
+  // adding bg and changing color on navbar
+
   if (
     document.body.scrollTop >= 500 ||
     document.documentElement.scrollTop >= 580
   ) {
-    // console.log(e);
     navbar.style.background = "rgb(0 0 0 / 50%)";
+    for (let i = 0; i < navList.length; i++) {
+      navList[i].style.color = "#000";
+    }
   } else {
     navbar.style.background = "inherit";
+    for (let i = 0; i < navList.length; i++) {
+      navList[i].style.color = "#e7e7e7";
+    }
   }
 };
+
+// adding active class to navigation
 
 $(document).ready(function () {
   $(".nav-list").on("click", function (e) {
