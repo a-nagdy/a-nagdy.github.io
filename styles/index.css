@@ -15,7 +15,8 @@
 :root {
     --mainheight: 2;
     --mainShadow: 1px 1px 2px rgba(0 0 0/15%);
-    --maincolor: #db8608
+    --maincolor: #db8608;
+    --sec-color: #e7e7e7
 }
 
 * {
@@ -67,7 +68,7 @@ body {
 .topnav a {
     float: left;
     display: block;
-    color: #e7e7e7;
+    color: #000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -87,7 +88,7 @@ body {
 /* Add an active class to highlight the current page */
 .topnav a.active {
     background-color: var(--maincolor);
-    color: white;
+    color: #000;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -344,6 +345,8 @@ section {
     align-items: center;
     width: 100%;
     transition: all .3s ease-in-out;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .btn-send:hover {
@@ -354,9 +357,10 @@ section {
 }
 
 .btn-send i {
-    color: #4cb648;
+    color: var(--sec-color);
     font-size: 24px;
     margin-right: 10px;
+    padding-right: 20px;
 }
 
 .cards-main,
@@ -386,7 +390,7 @@ section {
 }
 
 .details {
-    background-color: #f7f7f7;
+    background-color: var(--sec-color);
     padding: 20px 0 20px 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -441,7 +445,7 @@ footer {
 
 .container {
     background-color: #333333;
-    color: #f7f7f7;
+    color: var(--sec-color);
     display: grid;
     grid-template-columns: repeat(auto-fill, 430px);
     justify-content: space-between;
@@ -698,6 +702,10 @@ footer {
     color: white;
 }
 
+.fa-whatsapp {
+    background: #25D366;
+    color: white;
+}
 
 
 .card {
@@ -783,6 +791,11 @@ footer {
     border-bottom: 1px solid black;
     width: 250px;
     padding: 5px;
+}
+
+.modal-footer {
+    width: 100%;
+    margin-top: 20px;
 }
 
 /* over-riding bootstrap css */

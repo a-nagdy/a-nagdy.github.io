@@ -58,77 +58,8 @@ const cardsDetails = [
 let card = document.querySelector(".products");
 let required = document.querySelectorAll("input");
 for (let i = 0; i < cardsDetails.length; i++) {
-  let subcontent = `<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel"Contact Us</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <h2>Thank Your For Reaching to US</h2>
-      <p>Kindly Fill this form</p>
-      <form class="login">
-        <label for="fname">First Name:</label>
-        <input
-          type="text"
-          name="fname"
-          id="fname"
-          placeholder="Please Enter Your First Name"
-          required
-        />
-        <label for="lname">Last Name:</label>
-        <input
-          type="text"
-          name="lname"
-          id="lname"
-          placeholder="Please Enter Your Last Name"
-          required
-        />
-        <label for="email">email:</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Please Enter Your Email"
-          required
-        />
-        <label for="phone">phone:</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-          placeholder="Please Enter Your Mobile Number"
-          required
-        />
-        </form>
-       
-        <div class="modal-footer">
-        <button class="btn btn-primary" id="submit" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">submit</button>
-      </div>
-      </div>
-     
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel2">Thank You</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Thank you we will Contact You As Soon As possible.
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-success"  data-bs-toggle="modal" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
+  //   let subcontent = `
+  // `;
 
   let cardContent = ` 
   <div class="cards d-flex-row" >
@@ -148,13 +79,12 @@ for (let i = 0; i < cardsDetails.length; i++) {
     <span><strong>${cardsDetails[i].rooms}</strong>  Rooms </span>
     </p>
 
-    <button class="btn-send" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+    <button class="btn-send btn-success" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
       <i class="fas fa-shopping-cart"></i>
       Contact Us
     </button>
 
     </div>
-    ${subcontent}
  `;
   card.innerHTML += cardContent;
 }
@@ -223,12 +153,12 @@ window.onscroll = (e) => {
   ) {
     navbar.style.background = "rgb(0 0 0 / 50%)";
     for (let i = 0; i < navList.length; i++) {
-      navList[i].style.color = "#000";
+      navList[i].style.color = "#e7e7e7";
     }
   } else {
     navbar.style.background = "inherit";
     for (let i = 0; i < navList.length; i++) {
-      navList[i].style.color = "#e7e7e7";
+      navList[i].style.color = "#000";
     }
   }
 };

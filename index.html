@@ -129,7 +129,78 @@
           </div>
         </div>
       </section>
-      <section class="products" id="products"></section>
+      <section class="products" id="products">
+        
+      </section>
+      <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel"Contact Us</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <h2>Thank Your For Reaching to US</h2>
+            <p>Kindly Fill this form</p>
+            <form class="login" method="post" action="/2bcart-landing-page/send-email.php">
+              <label for="fname">First Name:</label>
+              <input
+                type="text"
+                name="fname"
+                id="fname"
+                placeholder="Please Enter Your First Name"
+                required
+              />
+              <label for="lname">Last Name:</label>
+              <input
+                type="text"
+                name="lname"
+                id="lname"
+                placeholder="Please Enter Your Last Name"
+                required
+              />
+              <label for="email">email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Please Enter Your Email"
+                required
+              />
+              <label for="phone">phone:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Please Enter Your Mobile Number"
+                required
+              />
+              <div class="modal-footer">
+              <button class="btn btn-primary" id="submit"  >Submit</button>
+            </div>
+              </form>
+             
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel2">Thank You</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Thank you we will Contact You As Soon As possible.
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success"  data-bs-toggle="modal" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="svg">
         <svg
           class="waves"
@@ -202,7 +273,11 @@
           <span><a href="#" class="fa fa-google"></a></span>
           <span><a href="#" class="fa fa-instagram"></a></span>
           <span
-            ><a href="https://wa.me/1020158836" class="fa fa-whatsapp"></a
+            ><a
+              href="https://api.whatsapp.com/send/?phone=201090065807&tex=Hello Theret&type=phone_number&app_absent=0"
+              class="fa fa-whatsapp"
+              aria-hidden="true"
+            ></a
           ></span>
         </div>
       </div>
