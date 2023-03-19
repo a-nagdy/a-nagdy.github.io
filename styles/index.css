@@ -15,6 +15,7 @@
 :root {
     --mainheight: 2;
     --mainShadow: 1px 1px 2px rgba(0 0 0/15%);
+    --maincolor: #db8608
 }
 
 * {
@@ -33,7 +34,7 @@ body {
     background-color: inherit;
     font: 1.2rem sans-serif;
     text-transform: capitalize;
-    color: orange;
+    color: var(--maincolor);
 
 }
 
@@ -85,7 +86,7 @@ body {
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-    background-color: #db8608;
+    background-color: var(--maincolor);
     color: white;
 }
 
@@ -134,18 +135,6 @@ body {
 
 }
 
-/* .main-photo-container {
-    background-image: url(../img/main-photo.jpg);
-    background-repeat: no-repeat;
-    position: relative;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 72vh;
-    z-index: -1;
-    filter: opacity(2);
-} */
 
 .overlay {
     overflow: hidden;
@@ -154,25 +143,34 @@ body {
     filter: blur(2px); */
 }
 
-/*.overlay h1,
-.overlay h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font: 1.2rem bolder sans-serif;
+.text .call-us-btn {
+    background-color: rgb(219, 134, 9, .80);
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    color: #e7e7e7;
+    border: none;
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.text .call-us-btn:hover {
+    animation: colorChange .5s both ease-in-out;
 
 }
 
-.overlay h1 {
-    font: 2rem bolder sans-serif;
-} */
+@keyframes colorChange {
+    100% {
+        background-color: rgb(219, 134, 9);
+        color: #000;
+    }
+}
 
 section {
     position: relative;
     text-align: center;
-    /* background: linear-gradient(60deg, rgba(84, 58, 183, 2) 0%, rgba(0, 172, 193, 2) 100%); */
-    /* background-color: #88340f */
-    /* background: #ffa751; */
+
 }
 
 .main-container {
@@ -437,7 +435,7 @@ footer {
     margin-top: 10px;
     border-radius: 20px;
     /* background: linear-gradient(to right, #f12711, #f5af19); */
-    background-color: #db8608;
+    background-color: var(--maincolor);
     color: #fff;
 }
 
@@ -657,7 +655,7 @@ footer {
 
 .dots-container {
     position: relative;
-    bottom: 90px;
+    bottom: 110px;
     text-align: center;
 }
 
