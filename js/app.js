@@ -8,8 +8,52 @@ let forSale = true;
 //   return `<div class="for-rent">For Rent </div>`;
 // }
 
-// object for dynamic products can be filled later with api
+// send mail functionality integration with emailjs
 
+emailjs.init("h86mKabABlCzh_cgd");
+const reqName = document.getElementById("from_name");
+const phone = document.getElementById("mobPhone");
+const message = document.getElementById("message");
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+    if (reqName.value.length >= 0 && phone.value.length >= 11) {
+      const btn = document.getElementById("button");
+      event.preventDefault();
+
+      btn.value = "Sending...";
+      const serviceID = "service_gry4tqr";
+      const templateID = "template_anvro5q";
+
+      emailjs.sendForm(serviceID, templateID, this).then(
+        () => {
+          btn.value = "Send Email";
+          console.log("Sent!");
+        },
+        (err) => {
+          btn.value = "Send Email";
+          console.log(JSON.stringify(err));
+        }
+      );
+    } else {
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // alert("Please enter your data")
+
+          return `<div class="alert">Please enter your data</div>`;
+        });
+    }
+  });
+
+// const btn = document.getElementById("button");
+
+// btn.addEventListener("click", function (event) {
+//   console.log(this.event.target);
+// });
+// object for dynamic products can be filled later with api
 const cardsDetails = [
   {
     cardName: "Villa In Hialeah, Dade County",
@@ -62,7 +106,7 @@ for (let i = 0; i < cardsDetails.length; i++) {
   // `;
 
   let cardContent = ` 
-  <div class="cards d-flex-row" >
+ <div class="cards d-flex-row" >
     <img src="./img/about-us.jpg" alt="" />
     
     <div class="cards-main">
@@ -84,7 +128,7 @@ for (let i = 0; i < cardsDetails.length; i++) {
       Contact Us
     </button>
 
-    </div>
+    </div> 
  `;
   card.innerHTML += cardContent;
 }
@@ -129,6 +173,17 @@ let autoplayInterval = setInterval(function () {
 
   document.getElementById("next").click();
 }, 5000);
+
+$(".cards").owlCarousel({
+  autoWidth: true,
+  loop: true,
+});
+$(document).ready(function () {
+  $(".cards").click(function () {
+    $(".cards").not($(this)).removeClass("active");
+    $(this).toggleClass("active");
+  });
+});
 
 // responsive navbar func
 
